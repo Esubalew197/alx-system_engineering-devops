@@ -1,0 +1,18 @@
+total 4
+drwxr-xr-x 1 esubalew197 esubalew197 4096 Sep  5 22:58 .
+drwxr-xr-x 1 esubalew197 esubalew197 4096 Sep  5 20:55 ..
+-rwxr--r-- 1 esubalew197 esubalew197   30 Sep  5 21:33 0-hello_world
+-rwxr--r-- 1 esubalew197 esubalew197   29 Sep  5 21:41 1-confused_smiley
+-rwxr--r-- 1 esubalew197 esubalew197   28 Sep  5 21:46 2-hellofile
+-rwxr--r-- 1 esubalew197 esubalew197   39 Sep  5 21:52 3-twofiles
+-rwxr--r-- 1 esubalew197 esubalew197   35 Sep  5 21:58 4-lastlines
+-rwxr--r-- 1 esubalew197 esubalew197   35 Sep  5 22:00 5-firstlines
+-rwxr--r-- 1 esubalew197 esubalew197   40 Sep  5 22:21 6-third_line
+-rwxr--r-- 1 esubalew197 esubalew197   86 Sep  5 22:53 7-file
+-rwxr--r-- 1 esubalew197 esubalew197   36 Sep  5 22:57 8-cwd_state
+-rw-r--r-- 1 esubalew197 esubalew197  109 Sep  5 20:58 README.md
+-rw-r--r-- 1 esubalew197 esubalew197    0 Sep  5 22:35 School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 esubalew197 esubalew197    0 Sep  5 22:35 \*\\'"Best
+-rw-r--r-- 1 esubalew197 esubalew197   12 Sep  5 22:54 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 esubalew197 esubalew197  801 Sep  5 22:23 iacta
+-rw-r--r-- 1 esubalew197 esubalew197    0 Sep  5 22:58 ls_cwd_content
