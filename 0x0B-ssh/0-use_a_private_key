@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Connects to my ALX server 54.157.157.151 with key in ~/.ssh/school
+
+ssh -i ~/.ssh/school ubuntu@54.157.157.151
