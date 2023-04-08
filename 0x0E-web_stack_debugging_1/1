@@ -1,4 +1,0 @@
-rm: cannot remove 'default': Permission denied
-ln: failed to create symbolic link 'default': File exists
- * Restarting nginx nginx
-   ...fail!
