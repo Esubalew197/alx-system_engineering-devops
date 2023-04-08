@@ -32,19 +32,17 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-# start of parameters for esubalew.tech
-frontend esubalew.tech-http-frontend
+frontend www-http
     bind *:80
-    http-request set-header X-Forwarded-Proto http
-    default_backend      esubalew.tech-backend
+    reqadd X-Forwarded-Proto:\ http
+    default_backend www-backend
 
-frontend  esubalew.tech-https-frontend
-        bind *:443 ssl crt /etc/ssl/esubalew.tech.pem
-        http-request set-header X-Forwarded-Proto https
-        default_backend esubalew.tech-backend
+frontend www-https
+    bind *:443 ssl crt /etc/letsencrypt/live/esubalew.tech/fullchain.pem
+    reqadd X-Forwarded-Proto:\ https
+    default_backend www-backend
 
-backend esubalew.tech-backend
-       balance roundrobin
-       server 132204-web-01 54.157.157.151:80  check
-       server 132204-web-02 54.160.107.247:80  check
-# end of parameters
+backend www-backend
+    balance roundrobin
+    server 132204-web-01 54.157.157.151:80 check
+    server 132204-web-02 54.160.107.247:80 check
