@@ -20,7 +20,7 @@ frontend frontendserver
    default_backend mywebservers
 backend mywebservers
    balance roundrobin
-   server 132204-web-01 54.157.157.151 check
+   server 132204-web-01 54.89.195.99 check
    server 132204-web-02 54.160.107.247 check" >> /etc/haproxy/haproxy.cfg
 service haproxy start 
 service haproxy restart
