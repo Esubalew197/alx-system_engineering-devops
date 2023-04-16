@@ -1,26 +1,40 @@
 #!/usr/bin/env bash
-# a script that installs and configures HAProxy
+#Installs and configures HAproxy in a load balancer server
 
-# install HAProxy
-apt-get install --no-install-recommends software-properties-common -y
-add-apt-repository ppa:vbernat/haproxy-2.0 -y
-apt-get update -y
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get update
 apt-get install -y haproxy=2.0.\*
 
-# configurations
-
-# make HAProxy load balancer to start automatically when the system boots.
-touch /etc/default/haproxy
 echo "ENABLED=1" >> /etc/default/haproxy
-# configuration in haproxy config file
-echo -e "
-frontend frontendserver
-   bind *:80
-   mode http
-   default_backend mywebservers
-backend mywebservers
-   balance roundrobin
-   server 132204-web-01 54.89.195.99 check
-   server 132204-web-02 54.160.107.247 check" >> /etc/haproxy/haproxy.cfg
-service haproxy start 
-service haproxy restart
+mv /etc/haproxy/haproxy.cfg{,.original}
+touch /etc/haproxy/haproxy.cfg
+
+printf %s "global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
+listen hbnb
+    bind 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    balance roundrobin
+    option httpclose
+    option forwardfor
+    server 132204-web-01 54.89.195.99:80 check
+    server 132204-web-02 54.160.107.247:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+service haproxy start
