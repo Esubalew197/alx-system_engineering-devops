@@ -1,2 +1,2 @@
 0x19-postmortem
-![postmortum](file:///C:/Users/Hp/Downloads/404-page.gif)
+![postmortum](https://github.com/Esubalew197/alx-system_engineering-devops/assets/109427994/594543b5-1bec-4555-bfe7-320e327cf232)
