@@ -1,2 +1,2 @@
 0x19-postmortem
-![postmortum](0x19-postmortem/404-page.gif)
+![postmortum](https://github.com/Esubalew197/alx-system_engineering-devops/0x19-postmortem/404-page.gif)
